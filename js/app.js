@@ -27,16 +27,16 @@ const getMovies = (data, property, element) => {
     filmTitle.class = `movieName`;
     filmTitle.innerHTML = `Movie ${i + 1}: ` + data.results[i].title;
     list.appendChild(filmTitle);
-    let planetHead = document.createElement(`p`);
-    planetHead.style.fontSize = `18px`;
-    planetHead.style.fontWeight = `bold`;
-    planetHead.innerHTML = `Planets in "${data.results[i].title}"`;
-    list.appendChild(planetHead);
-    let planetList = document.createElement(`ul`);
-    planetList.class = `moviePlanets`;
-    list.appendChild(planetList);
+    let planetHeader = document.createElement(`p`);
+    planetHeader.style.fontSize = `18px`;
+    planetHeader.style.fontWeight = `bold`;
+    planetHeader.innerHTML = `Planets in "${data.results[i].title}"`;
+    list.appendChild(planetHeader);
+    let planetTitle = document.createElement(`ul`);
+    planetTitle.class = `moviePlanets`;
+    list.appendChild(planetTitle);
     for (let j = 0; j < data.results[i].planets.length; ++j) {
-      dataReq(data.results[i].planets[j], `name`, planetList, getPlanets);
+      dataReq(data.results[i].planets[j], `name`, planetTitle, getPlanets);
     }
   }
 };
@@ -45,10 +45,10 @@ const getPlanets = (data, property, element) => {
   let newPlanet = document.createElement(`li`);
   newPlanet.style.listStyleType = `hebrew`;
   newPlanet.class = `planet`;
-  let planetLi = document.createElement(`p`);
-  planetLi.class = `planetName`;
-  planetLi.innerHTML = data.name;
-  newPlanet.appendChild(planetLi);
+  let planetList = document.createElement(`p`);
+  planetList.class = `planetName`;
+  planetList.innerHTML = data.name;
+  newPlanet.appendChild(planetList);
   element.appendChild(newPlanet);
 };
 

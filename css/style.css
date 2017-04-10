@@ -1,0 +1,8 @@
+body {
+  text-align: center;
+}
+.center {
+  width: 20%;
+  text-align: left;
+  margin: 0 auto;
+}
