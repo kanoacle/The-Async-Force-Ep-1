@@ -21,13 +21,11 @@ const getMovies = (data, property, element) => {
     list.style.listStyleType = `hebrew`;
     list.class = `movie`;
     filmList.appendChild(list);
-    let filmTitle = document.createElement(`p`);
-    filmTitle.style.fontSize = `24px`;
-    filmTitle.style.fontWeight = `bold`;
+    let filmTitle = document.createElement(`h2`);
     filmTitle.class = `movieName`;
     filmTitle.innerHTML = `Movie ${i + 1}: ` + data.results[i].title;
     list.appendChild(filmTitle);
-    let planetHeader = document.createElement(`p`);
+    let planetHeader = document.createElement(`h3`);
     planetHeader.style.fontSize = `18px`;
     planetHeader.style.fontWeight = `bold`;
     planetHeader.innerHTML = `Planets in "${data.results[i].title}"`;
